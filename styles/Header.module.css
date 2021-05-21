@@ -1,0 +1,52 @@
+.header {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 0;
+}
+.header h1 {
+  position: relative;
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+}
+.theme {
+  position: relative;
+  top: 7px;
+  display: flex;
+  align-items: center;
+}
+.theme span {
+  position: relative;
+
+  font-size: 12px;
+  color: white;
+  margin-right: 25px;
+  top: 1px;
+}
+.theme_switch {
+  display: flex;
+  padding: 5px 4px;
+  background: #262c44;
+  border-radius: 500px;
+  align-items: center;
+}
+.dot {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  background-color: hsl(6, 63%, 50%);
+  margin: 1px 3px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.dot span {
+  position: relative;
+  top: -30px;
+  padding: 0 4px;
+  font-size: 12px;
+  position: relative;
+}

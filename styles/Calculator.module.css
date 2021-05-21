@@ -1,0 +1,9 @@
+.calculator {
+  position: absolute;
+  width: 540px;
+  left: 50%;
+  top: 50%;
+  margin-left: -270px;
+  margin-top: -360px;
+  z-index: 1;
+}
