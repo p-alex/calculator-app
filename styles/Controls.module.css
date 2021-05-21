@@ -1,0 +1,99 @@
+.controls {
+  width: 100%;
+  display: grid;
+  background: #232d48;
+  margin-top: 26px;
+  padding: 32px;
+  grid-gap: 25px;
+  border-radius: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+    "seven eight nine del"
+    "four five six plus"
+    "one two three minus"
+    "period zero divide multiply"
+    "reset reset equal equal";
+}
+.btn {
+  cursor: pointer;
+  padding: 10px 15px;
+  background: #eae3db;
+  color: #404654;
+  border-radius: 10px;
+  border-bottom: solid 5px #b2a295;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+.btn span {
+  position: relative;
+  top: 3px;
+}
+.number:nth-child(1) {
+  grid-area: one;
+}
+.number:nth-child(2) {
+  grid-area: two;
+}
+.number:nth-child(3) {
+  grid-area: three;
+}
+.number:nth-child(4) {
+  grid-area: four;
+}
+.number:nth-child(5) {
+  grid-area: five;
+}
+.number:nth-child(6) {
+  grid-area: six;
+}
+.number:nth-child(7) {
+  grid-area: seven;
+}
+.number:nth-child(8) {
+  grid-area: eight;
+}
+.number:nth-child(9) {
+  grid-area: nine;
+}
+.number:nth-child(10) {
+  grid-area: zero;
+}
+.plus {
+  grid-area: plus;
+}
+.minus {
+  grid-area: minus;
+}
+.divide {
+  grid-area: divide;
+}
+.multiply {
+  grid-area: multiply;
+}
+.reset {
+  grid-area: reset;
+  background: #647299;
+  color: #f7ffff;
+  border-bottom: solid 5px #424e76;
+  font-size: 18px;
+}
+.equal {
+  grid-area: equal;
+  background: #d13f30;
+  color: #f7ffff;
+  border-bottom: solid 5px #912217;
+  font-size: 18px;
+}
+.del {
+  grid-area: del;
+  background: #647299;
+  color: #f7ffff;
+  border-bottom: solid 5px #424e76;
+  font-size: 18px;
+}
+.period {
+  grid-area: period;
+}

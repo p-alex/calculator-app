@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import Calculator from "../containers/Calculator";
 import Header from "../components/Header";
 import Display from "../components/Display";
+import Controls from "../components/Controls";
 export default function Home() {
   return (
     <>
@@ -14,6 +15,7 @@ export default function Home() {
       <Calculator>
         <Header />
         <Display />
+        <Controls />
       </Calculator>
     </>
   );
