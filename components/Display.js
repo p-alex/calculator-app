@@ -1,8 +1,12 @@
 import styles from "../styles/Display.module.css";
-export default function Display() {
+export default function Display({ calc }) {
   return (
-    <div className={styles.display}>
-      <span>399,981</span>
+    <div
+      className={
+        calc.length ? styles.display : styles.display + " " + styles.empty
+      }
+    >
+      <span>{calc}</span>
     </div>
   );
 }

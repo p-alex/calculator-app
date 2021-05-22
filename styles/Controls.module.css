@@ -34,7 +34,7 @@
   top: 3px;
 }
 .btn:active {
-  transform: scale(0.95);
+  transform: scale(0.92);
 }
 .number:nth-child(1) {
   grid-area: one;

@@ -9,3 +9,9 @@
   color: #fffffd;
   margin-top: 20px;
 }
+.display span {
+  word-wrap: break-word;
+}
+.display.empty {
+  padding: 62.5px 33px;
+}
