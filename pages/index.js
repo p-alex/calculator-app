@@ -22,9 +22,10 @@ export default function Home() {
       !regFirstChar.test(calc.slice(0, 1)) &&
       !regBetweenString.test(calc.slice(1, calc.length - 1)) &&
       !/(\+|\-|\*|\/)0{1,}[1-9]{1,}/g.test(calc) &&
-      !/^0[0-9]{1,}/.test(calc)
+      !/^0[0-9]{1,}/.test(calc) &&
+      !/.(\+|\-|\*|\/)/.test(calc)
     ) {
-      setCalc(eval?.(calc).toString());
+      setCalc(eval(calc).toString());
     } else {
       setCalc("");
     }
