@@ -102,3 +102,10 @@
 .period {
   grid-area: period;
 }
+
+@media screen and (max-width: 560px) {
+  .controls {
+    padding: 15px;
+    grid-gap: 15px;
+  }
+}

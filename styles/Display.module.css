@@ -15,3 +15,12 @@
 .display.empty {
   padding: 62.5px 33px;
 }
+
+@media screen and (max-width: 560px) {
+  .display {
+    font-size: 26px;
+  }
+  .display.empty {
+    padding: 48.5px 33px;
+  }
+}
