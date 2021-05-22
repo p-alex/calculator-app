@@ -16,13 +16,15 @@ export default function Home() {
   const handleResult = () => {
     const regFirstChar = /(\*|\/)/;
     const regLastChar = /(\*|\/|\-|\+)/;
-    const regBetweenChar = /([\*|\+|\-|\/|\.]{2,})/;
+    const regBetweenString = /([\*|\+|\-|\/|\.]{2,})/;
     if (
       !regLastChar.test(calc.slice(calc.length - 1, calc.length)) &&
       !regFirstChar.test(calc.slice(0, 1)) &&
-      !regBetweenChar.test(calc.slice(1, calc.length - 1))
+      !regBetweenString.test(calc.slice(1, calc.length - 1)) &&
+      !/(\+|\-|\*|\/)0{1,}[1-9]{1,}/g.test(calc) &&
+      !/^0[0-9]{1,}/.test(calc)
     ) {
-      setCalc(eval(calc).toString());
+      setCalc(eval?.(calc).toString());
     } else {
       setCalc("");
     }
