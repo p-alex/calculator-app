@@ -23,7 +23,7 @@ export default function Home() {
       !regBetweenString.test(calc.slice(1, calc.length - 1)) &&
       !/(\+|\-|\*|\/)0{1,}[1-9]{1,}/g.test(calc) &&
       !/^0[0-9]{1,}/.test(calc) &&
-      !/.(\+|\-|\*|\/)/.test(calc)
+      !/\.(\+|\-|\*|\/){1,}/.test(calc)
     ) {
       setCalc(eval(calc).toString());
     } else {
