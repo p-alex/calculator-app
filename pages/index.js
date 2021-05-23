@@ -14,21 +14,18 @@ export default function Home() {
   const handleReset = () => setCalc("");
 
   const handleResult = () => {
-    const regFirstChar = /(\*|\/)/;
-    const regLastChar = /(\*|\/|\-|\+)/;
-    const regBetweenString = /([\*|\+|\-|\/|\.]{2,})/;
     if (
-      !regLastChar.test(calc.slice(calc.length - 1, calc.length)) &&
-      !regFirstChar.test(calc.slice(0, 1)) &&
-      !regBetweenString.test(calc.slice(1, calc.length - 1)) &&
+      !/(\*|\/|\+|\-)/.test(calc.slice(calc.length - 1, calc.length)) &&
+      !/(\*|\/|\-|\+)/.test(calc.slice(0, 1)) &&
+      !/([\*|\+|\-|\/|\.]{2,})/.test(calc.slice(1, calc.length - 1)) &&
       !/(\+|\-|\*|\/)0{1,}[1-9]{1,}/g.test(calc) &&
       !/^0[0-9]{1,}/.test(calc) &&
       !/\.(\+|\-|\*|\/){1,}/.test(calc)
     ) {
       setCalc(eval(calc).toString());
-    } else {
-      setCalc("");
+      return;
     }
+    return setCalc("");
   };
 
   const handleDelete = () => {
