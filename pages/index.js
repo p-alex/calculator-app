@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { ThemeProvider } from "styled-components";
+import { themeOne, themeTwo, themeThree, GlobalStyles } from "../themes/themes";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Calculator from "../containers/Calculator";
@@ -7,6 +9,9 @@ import Display from "../components/Display";
 import Controls from "../components/Controls";
 export default function Home() {
   let [calc, setCalc] = useState("");
+  let [theme, setTheme] = useState("theme-one");
+
+  const handleThemeChange = (theme) => setTheme(theme);
 
   const handleCalc = (char) =>
     calc.length < 14 ? setCalc((calc = calc + char)) : null;
@@ -40,16 +45,29 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.design}></div>
-      <Calculator>
-        <Header />
-        <Display calc={calc} />
-        <Controls
-          handleReset={handleReset}
-          handleCalc={handleCalc}
-          handleResult={handleResult}
-          handleDelete={handleDelete}
-        />
-      </Calculator>
+      <ThemeProvider
+        theme={
+          theme === "theme-one"
+            ? themeOne
+            : theme === "theme-two"
+            ? themeTwo
+            : theme === "theme-three"
+            ? themeThree
+            : themeOne
+        }
+      >
+        <GlobalStyles />
+        <Calculator>
+          <Header theme={theme} handleThemeChange={handleThemeChange} />
+          <Display calc={calc} />
+          <Controls
+            handleReset={handleReset}
+            handleCalc={handleCalc}
+            handleResult={handleResult}
+            handleDelete={handleDelete}
+          />
+        </Calculator>
+      </ThemeProvider>
     </>
   );
 }
