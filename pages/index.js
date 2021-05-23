@@ -16,7 +16,7 @@ export default function Home() {
   const handleResult = () => {
     if (
       !/(\*|\/|\+|\-)/.test(calc.slice(calc.length - 1, calc.length)) &&
-      !/(\*|\/|\-|\+)/.test(calc.slice(0, 1)) &&
+      !/(\*|\/)/.test(calc.slice(0, 1)) &&
       !/([\*|\+|\-|\/|\.]{2,})/.test(calc.slice(1, calc.length - 1)) &&
       !/(\+|\-|\*|\/)0{1,}[1-9]{1,}/g.test(calc) &&
       !/^0[0-9]{1,}/.test(calc) &&
