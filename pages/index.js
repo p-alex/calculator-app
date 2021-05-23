@@ -20,7 +20,8 @@ export default function Home() {
       !/([\*|\+|\-|\/|\.]{2,})/.test(calc.slice(1, calc.length - 1)) &&
       !/(\+|\-|\*|\/)0{1,}[1-9]{1,}/g.test(calc) &&
       !/^0[0-9]{1,}/.test(calc) &&
-      !/\.(\+|\-|\*|\/){1,}/.test(calc)
+      !/\.(\+|\-|\*|\/){1,}/.test(calc) &&
+      calc.length
     ) {
       setCalc(eval(calc).toString());
       return;
