@@ -18,10 +18,7 @@
 .btn {
   cursor: pointer;
   padding: 10px 15px;
-  background: #eae3db;
-  color: #404654;
   border-radius: 10px;
-  border-bottom: solid 5px #b2a295;
   display: flex;
   align-items: center;
   justify-content: center;

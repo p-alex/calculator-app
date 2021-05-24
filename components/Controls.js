@@ -1,4 +1,23 @@
 import styles from "../styles/Controls.module.css";
+import styled from "styled-components";
+const ControlsContainer = styled.div`
+  background-color: ${(props) => props.theme.keypad_and_toggle_bg};
+`;
+const Pad = styled.div`
+  background-color: ${(props) => props.theme.key_primary_bg};
+  color: ${(props) => props.theme.primary_textColor};
+  border-bottom: solid 5px ${(props) => props.theme.key_primary_bg_shadow};
+`;
+const PadSecondary = styled.div`
+  background-color: ${(props) => props.theme.key_secondary_bg};
+  color: #fff;
+  border-bottom: solid 5px ${(props) => props.theme.key_secondary_bg_shadow};
+`;
+const EqualPad = styled.div`
+  background-color: ${(props) => props.theme.key_tertiary_bg};
+  color: ${(props) => props.theme.tertiary_textColor};
+  border-bottom: solid 5px ${(props) => props.theme.key_tertiary_bg_shadow};
+`;
 export default function Controls({
   handleResult,
   handleCalc,
@@ -7,55 +26,64 @@ export default function Controls({
 }) {
   const numPads = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   return (
-    <div className={styles.controls}>
+    <ControlsContainer className={styles.controls}>
       {numPads.map((num) => (
-        <div
+        <Pad
           key={num}
           className={styles.number + " " + styles.btn}
           onClick={() => handleCalc(num)}
         >
           <span>{num}</span>
-        </div>
+        </Pad>
       ))}
-      <div
+      <Pad
         className={styles.plus + " " + styles.btn}
         onClick={() => handleCalc("+")}
       >
         <span>+</span>
-      </div>
-      <div
+      </Pad>
+      <Pad
         className={styles.minus + " " + styles.btn}
         onClick={() => handleCalc("-")}
       >
         <span>-</span>
-      </div>
-      <div
+      </Pad>
+      <Pad
         className={styles.divide + " " + styles.btn}
         onClick={() => handleCalc("/")}
       >
         <span>/</span>
-      </div>
-      <div
+      </Pad>
+      <Pad
         className={styles.multiply + " " + styles.btn}
         onClick={() => handleCalc("*")}
       >
         <span>x</span>
-      </div>
-      <div className={styles.reset + " " + styles.btn} onClick={handleReset}>
+      </Pad>
+      <PadSecondary
+        className={styles.reset + " " + styles.btn}
+        onClick={handleReset}
+      >
         <span>RESET</span>
-      </div>
-      <div className={styles.equal + " " + styles.btn} onClick={handleResult}>
+      </PadSecondary>
+      <EqualPad
+        className={styles.equal + " " + styles.btn}
+        onClick={handleResult}
+      >
         <span>=</span>
-      </div>
-      <div className={styles.del + " " + styles.btn} onClick={handleDelete}>
+      </EqualPad>
+      <PadSecondary
+        className={styles.del + " " + styles.btn}
+        onClick={handleDelete}
+      >
         <span>DEL</span>
-      </div>
-      <div
+      </PadSecondary>
+      <Pad
         className={styles.period + " " + styles.btn}
         onClick={() => handleCalc(".")}
       >
         <span>.</span>
-      </div>
-    </div>
+      </Pad>
+    </ControlsContainer>
   );
 }

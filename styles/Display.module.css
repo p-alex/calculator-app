@@ -2,11 +2,9 @@
   position: relative;
   width: 100%;
   border-radius: 10px;
-  background: #181f32;
   font-size: 50px;
   padding: 33px;
   text-align: end;
-  color: #fffffd;
   margin-top: 20px;
 }
 .display span {
