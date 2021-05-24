@@ -6,7 +6,7 @@ export const themeOne = {
   key_primary_bg: "hsl(30, 25%, 89%)",
   key_primary_bg_shadow: "hsl(28, 16%, 65%)",
   key_secondary_bg: "hsl(225, 21%, 49%)",
-  key_secondary_bg_shadow: "hsl(225, 21%, 49%)",
+  key_secondary_bg_shadow: "hsl(224, 28%, 35%)",
   key_tertiary_bg: "hsl(6, 63%, 50%)",
   key_tertiary_bg_shadow: "hsl(6, 70%, 34%)",
   primary_textColor: "hsl(221, 14%, 31%)",
