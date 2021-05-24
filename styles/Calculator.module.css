@@ -13,8 +13,8 @@
     width: 95%;
     left: 0;
     right: 0;
-    top: 50px;
-    margin: 0 auto;
+    top: 0;
+    margin: 25px auto;
   }
 }
 @keyframes scale {

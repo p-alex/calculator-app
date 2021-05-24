@@ -4,5 +4,6 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Spartan", sans-serif;
-  transition: background-color 300ms, color 300ms, border 300ms;
+  transition: background-color 300ms linear, color 300ms linear,
+    border 300ms linear;
 }

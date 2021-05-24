@@ -28,7 +28,7 @@ export default function Home() {
       !/\.(\+|\-|\*|\/){1,}/.test(calc) &&
       calc.length
     ) {
-      setCalc(eval(calc).toString());
+      setCalc(eval(calc.replace("x", "*")).toString());
       return;
     }
     return setCalc("");

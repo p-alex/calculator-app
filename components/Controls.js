@@ -56,7 +56,7 @@ export default function Controls({
       </Pad>
       <Pad
         className={styles.multiply + " " + styles.btn}
-        onClick={() => handleCalc("*")}
+        onClick={() => handleCalc("x")}
       >
         <span>x</span>
       </Pad>
