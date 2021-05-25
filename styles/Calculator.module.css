@@ -8,9 +8,9 @@
   z-index: 1;
   animation: scale 500ms;
 }
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 590px) {
   .calculator {
-    width: 95%;
+    width: 90%;
     left: 0;
     right: 0;
     top: 0;

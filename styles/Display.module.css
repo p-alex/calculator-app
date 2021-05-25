@@ -1,17 +1,18 @@
 .display {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   width: 100%;
   border-radius: 10px;
   font-size: 50px;
-  padding: 33px;
   text-align: end;
   margin-top: 20px;
+  height: 125px;
+  padding: 0 32px;
 }
 .display span {
   word-wrap: break-word;
-}
-.display.empty {
-  padding: 62.5px 33px;
 }
 
 @media screen and (max-width: 560px) {

@@ -4,6 +4,6 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Spartan", sans-serif;
-  transition: background-color 300ms linear, color 300ms linear,
-    border 300ms linear;
+  transition-property: color, background, border;
+  transition-duration: 700ms;
 }
