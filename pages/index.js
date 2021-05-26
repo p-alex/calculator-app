@@ -20,7 +20,7 @@ export default function Home() {
   const handleThemeChange = (theme) => setTheme(theme);
 
   const handleCalc = (char) =>
-    calc.length < 14 ? setCalc((calc += char)) : null;
+    calc.length < 13 ? setCalc((calc += char)) : null;
 
   const handleReset = () => setCalc("");
 
@@ -33,8 +33,13 @@ export default function Home() {
       !/\.(\+|\-|\x|\/){1,}/.test(calc) &&
       calc.length &&
       calc !== "."
-    )
-      return setCalc(eval(calc.replaceAll("x", "*")).toFixed(5).toString());
+    ) {
+      return setCalc(
+        /[0-9]+\.[0-9]{6,}/.test(eval(calc.replaceAll("x", "*")))
+          ? eval(calc.replaceAll("x", "*")).toFixed(5).toString()
+          : eval(calc.replaceAll("x", "*")).toString()
+      );
+    }
     return setCalc("");
   };
 
