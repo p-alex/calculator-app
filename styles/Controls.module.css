@@ -76,29 +76,19 @@
 }
 .reset {
   grid-area: reset;
-  background: #647299;
-  color: #f7ffff;
-  border-bottom: solid 5px #424e76;
   font-size: 18px;
 }
 .equal {
   grid-area: equal;
-  background: #d13f30;
-  color: #f7ffff;
-  border-bottom: solid 5px #912217;
   font-size: 18px;
 }
 .del {
   grid-area: del;
-  background: #647299;
-  color: #f7ffff;
-  border-bottom: solid 5px #424e76;
   font-size: 18px;
 }
 .period {
   grid-area: period;
 }
-
 @media screen and (max-width: 560px) {
   .controls {
     padding: 15px;

@@ -19,7 +19,6 @@
 }
 .theme span {
   position: relative;
-
   font-size: 12px;
   margin-right: 25px;
   top: 1px;
@@ -45,7 +44,6 @@
 .dot.current_theme {
   opacity: 1;
 }
-
 .theme_numbers {
   padding: 0px 4px;
   position: absolute;
@@ -53,6 +51,7 @@
   font-size: 12px;
   width: 100%;
   display: flex;
+  font-weight: 400;
   align-items: center;
   justify-content: space-between;
 }

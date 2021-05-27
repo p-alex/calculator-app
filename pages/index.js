@@ -12,12 +12,23 @@ export default function Home() {
   let [theme, setTheme] = useState("theme-one");
 
   useEffect(() => {
-    if (/(\x|\/|\+|\-|\.){2,}/.test(calc)) {
-      setCalc(calc.slice(0, calc.length - 1));
+    if (localStorage.getItem("theme") === null) {
+      localStorage.setItem("theme", JSON.stringify("theme-one"));
+      setTheme(JSON.parse(localStorage.getItem("theme")));
+    } else {
+      setTheme(JSON.parse(localStorage.getItem("theme")));
     }
+  });
+
+  useEffect(() => {
+    if (/(\x|\/|\+|\-|\.){2,}/.test(calc))
+      setCalc(calc.slice(0, calc.length - 1));
   }, [calc]);
 
-  const handleThemeChange = (theme) => setTheme(theme);
+  const handleThemeChange = (theme) => {
+    localStorage.setItem("theme", JSON.stringify(theme));
+    setTheme(JSON.parse(localStorage.getItem("theme")));
+  };
 
   const handleCalc = (char) =>
     calc.length < 13 ? setCalc((calc += char)) : null;
@@ -33,13 +44,12 @@ export default function Home() {
       !/\.(\+|\-|\x|\/){1,}/.test(calc) &&
       calc.length &&
       calc !== "."
-    ) {
+    )
       return setCalc(
         /[0-9]+\.[0-9]{6,}/.test(eval(calc.replaceAll("x", "*")))
           ? eval(calc.replaceAll("x", "*")).toFixed(5).toString()
           : eval(calc.replaceAll("x", "*")).toString()
       );
-    }
     return setCalc("");
   };
 

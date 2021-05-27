@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 export const themeOne = {
-  main_bg: "hsl(222, 26%, 31%)",
+  main_bg: "#3b4664",
   keypad_and_toggle_bg: "hsl(223, 31%, 20%)",
   screen_bg: "hsl(224, 36%, 15%)",
   key_primary_bg: "hsl(30, 25%, 89%)",
@@ -11,7 +11,7 @@ export const themeOne = {
   key_tertiary_bg_shadow: "hsl(6, 70%, 34%)",
   primary_textColor: "hsl(221, 14%, 31%)",
   secondary_textColor: "#fff",
-  tertiary_textColor: "hsl(0, 0, 100%)",
+  tertiary_textColor: "#fff",
   logo_and_labels: "#fff",
 };
 export const themeTwo = {
@@ -26,7 +26,7 @@ export const themeTwo = {
   key_tertiary_bg_shadow: "hsl(25, 99%, 27%)",
   primary_textColor: "hsl(60, 10%, 19%)",
   secondary_textColor: "#fff",
-  tertiary_textColor: "hsl(0, 0, 100%)",
+  tertiary_textColor: "#fff",
   logo_and_labels: "#222",
 };
 export const themeThree = {
@@ -44,7 +44,6 @@ export const themeThree = {
   tertiary_textColor: "hsl(198, 20%, 13%)",
   logo_and_labels: "hsl(52, 100%, 62%)",
 };
-
 export const GlobalStyles = createGlobalStyle`
    body{
     background-color:${(props) => props.theme.main_bg}
