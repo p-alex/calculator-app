@@ -30,7 +30,10 @@
   top: 3px;
 }
 .btn:active {
-  transform: scale(0.92);
+  border: 0;
+  padding: 8px 15px;
+  position: relative;
+  top: 2px;
 }
 .number:nth-child(1) {
   grid-area: one;
