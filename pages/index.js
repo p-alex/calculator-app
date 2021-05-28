@@ -23,6 +23,9 @@ export default function Home() {
   useEffect(() => {
     if (/(\x|\/|\+|\-|\.){2,}/.test(calc))
       setCalc(calc.slice(0, calc.length - 1));
+    if (/\w{1,}\.{2,}/.test(calc)) setCalc(calc.slice(0, calc.length - 1));
+    if (/\d+\.\d+\./.test(calc)) setCalc(calc.slice(0, calc.length - 1));
+    if (calc === "Infinity" || calc === "NaN") setCalc("");
   }, [calc]);
 
   const handleThemeChange = (theme) => {
