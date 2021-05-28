@@ -25,7 +25,8 @@ export default function Home() {
       setCalc(calc.slice(0, calc.length - 1));
     if (/\w{1,}\.{2,}/.test(calc)) setCalc(calc.slice(0, calc.length - 1));
     if (/\d+\.\d+\./.test(calc)) setCalc(calc.slice(0, calc.length - 1));
-    if (calc === "Infinity" || calc === "NaN") setCalc("");
+    if (/^Infinity\w+/.test(calc)) setCalc(calc.slice(8, calc.length));
+    if (/^NaN\w+/.test(calc)) setCalc(calc.slice(3, calc.length));
   }, [calc]);
 
   const handleThemeChange = (theme) => {
@@ -33,8 +34,9 @@ export default function Home() {
     setTheme(JSON.parse(localStorage.getItem("theme")));
   };
 
-  const handleCalc = (char) =>
+  const handleCalc = (char) => {
     calc.length < 13 ? setCalc((calc += char)) : null;
+  };
 
   const handleReset = () => setCalc("");
 
